@@ -1,7 +1,40 @@
-h1 {
-	color: rebeccapurple;
+$yellow: #F6D70E;
+$lightGrey: #B7B7B7;
+$black: #000000;
+$white: #ffffff;
+
+// @import "../partials/setup";
+body {
+	background-color: $lightGrey;
+	font-family: 'Roboto', sans-serif;
 }
 
-body {
-	background-color: grey;
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	font-size: 60px;
+	span {
+		color: $yellow;
+	}
+}
+
+p {
+	color: white;
+	span {
+		color: $yellow;
+		text-transform: uppercase;
+	}
+}
+
+input[type="text"] {
+	border: none;
+}
+
+input[type="submit"] {
+	background-color: $black;
+	border: none;
+	font-family: 'Oswald', sans-serif;
+	color: $white;
+	text-transform: uppercase;
 }
