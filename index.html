@@ -3,10 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Songkick-API</title>
+		
 	<link rel="stylesheet" href="public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+	
+	<script id="concertList" type="x-handlebars-template">
+		<li class="concertListItem">
+			<ul>
+				<li><h3>{{performance.artist.displayName}}</h3></li>
+				<li><img src="{{spotify.image}}" /></li>
+				<li><h4>{{start.date}}</h4></li>
+				<li><h4>{{start.time}}</h4></li>
+				<li><h4>{{venue.displayName}}</h4></li>
+				<li><h4>{{popularity}}</h4></li>
+				<li><h4><a href="{{uri}}">Website</a></h4></li>
+			</ul>	
+		</li>
+	</script>
 	<script id="userList" type="x-handlebars-template">
 		<li class="userListConcertItem">
 			<ul>
@@ -37,6 +52,14 @@
 			</form>
 		</div>
 	</main>	
+
+	<section id="concerts">
+		<h2 class="concerts">What's up in<span class="location">**Location**</span></h2>
+		<ul class="concertListItems">
+
+		</ul>
+	</section> <!--./concertList-->
+
 	<section class="userListSection">
 		<h2 class="trayTitle">The Lit List</h2>
 			<ul class="userListConcertItems">
