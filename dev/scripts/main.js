@@ -74,8 +74,6 @@ sk.getCityShows = function (id) {
   });
 };
 
-//mathMax on the array of popularity things
-//take each concert object, filter
 
 sk.filterListByPopularity = function(concertList) {
   let drilledToConcertArray = concertList.resultsPage.results.event
@@ -92,7 +90,6 @@ sk.putConcertsInTemplate = function(concertList){
 };
 // http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
 
-//display location. 
 //get location id and make second songkickajax request for concerts
 //get artist names from second songkickajax store in variable and use to query musiki for images
 //funnel second ajaxsongkick and musiki results into handlebar template
