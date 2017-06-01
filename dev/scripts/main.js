@@ -1,6 +1,6 @@
 
   // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyA8FFMyn81ZNHNmY6EUHIuiyyb4Wq_MBvQ",
     authDomain: "songkick-19f05.firebaseapp.com",
     databaseURL: "https://songkick-19f05.firebaseio.com",
@@ -8,29 +8,25 @@
     storageBucket: "songkick-19f05.appspot.com",
     messagingSenderId: "946494866814"
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-const dbRef = firebase.database().ref('UserConcertList');
+const skRef = firebase.database().ref('/UserConcertList');
  
 
 $(function(){
+  $('#concertListItems').on('click', '.concertListItem', function() {
+    const concertDetails = $(this).text();
+    skRef.push(concertDetails);
+  });
+  // });
 
-  firebase.database().ref('userConcertList').on('value', function(res){
+  skRef('userConcertList').on('value', function(res){
     $('.concertListItems').empty();
     var userConcertListItems = res.val();
-    for (userConcertListItem in userConcertListItems) {
-      $('.userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
+    for (let userConcertListItem in userConcertListItems) {
+      $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
     }
   });
-
-  $('.concertListItems').on('click', '.concertListItem', function() {
-    //grab the value of each concertList item when user clicks on them and store in fb
-    let userConcertListItem = $('.concertListItem') //this?  how to access?
-    if (userConcertListItem !== '') {
-      dbRef.push(userConcertListItem);
-    }
-  });
-
 });
 
 const sk = {};
@@ -85,7 +81,12 @@ sk.filterListByPopularity = function(concertList) {
 };
 
 sk.putConcertsInTemplate = function(concertList){
-  console.log(concertList)
+  var concertTemplate = $('#concertList').html();
+  var compiledConcertTemplate = Handlebars.compile(concertTemplate);
+  concertList.forEach(function(concert){
+    console.log(concert)
+    $('#concertListItems').append(compiledConcertTemplate(concert));
+  });
 
 };
 // http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
@@ -98,12 +99,11 @@ sk.putConcertsInTemplate = function(concertList){
 //figure out how to make it clickable into firebase (storage)
 //figure out hot update userConcertListItems with firebase->handlebar template for the userConcertListItems
 
-sk.init = function () {
+sk.init = function() {
   sk.getMatchingCities();
 };
 
 
-$(function () {
+$(function() {
     sk.init();
-})
-
+});
