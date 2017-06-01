@@ -56,7 +56,7 @@ sk.getMatchingCities = function () {
       apikey: sk.apiKey
     }
   }).then(function (locationResults) {
-      locationResults = locationResults.resultsPage.results.location;
+      locationResults = locationResults.resultsPage.results.location[0].city.displayName;
       console.log(locationResults);
   });
 };
