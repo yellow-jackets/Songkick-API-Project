@@ -104,9 +104,12 @@ sk.putConcertsInTemplate = function(concertList){
   var concertTemplate = $('#concertList').html();
   var compiledConcertTemplate = Handlebars.compile(concertTemplate);
   concertList.forEach(function(concert){
+    // console.log(concert)
+
 
     // var artistName = concert.performance[0].displayName
     // $('.artist').append('<h3>' + artistName + '</h3>')
+
 
     $('#concertListItems').append(compiledConcertTemplate(concert));
   });
@@ -123,8 +126,33 @@ sk.putConcertsInTemplate = function(concertList){
 //figure out how to make it clickable into firebase (storage)
 //figure out hot update userConcertListItems with firebase->handlebar template for the userConcertListItems
 
+// get artist images
+
+// figre out how to append this
+sk.getArtistImage = function () {
+  $.ajax({
+    url: `https://music-api.musikki.com/v1/artists`,
+    method: 'GET',
+    dataType: 'json',
+    data: {
+      // make the q: a variable input based on grabbing the artist name
+      q: 'French Montana',
+      appkey: '7039c8a27b6cbabadb760d4890a3011e',
+      appid: '294aaa1e4e2e356b1873051727fa0456'
+    }
+  }).then(function (artist) {
+      console.log(artist.results[0].image);
+  });
+};
+
 sk.init = function() {
+<<<<<<< HEAD
+  sk.getMatchingCities();
+  // remove getArtistImage from here once we call it in another function
+  sk.getArtistImage();
+=======
   sk.locationEvent();
+>>>>>>> 4b0ecee5b3f680668f5cfc7231e24eb44ec60d9a
 };
 
 
