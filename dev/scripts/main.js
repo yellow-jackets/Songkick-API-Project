@@ -22,7 +22,7 @@ $(function(){
   skRef.on('value', function(res){
     var userListConcertItems = res.val();
     for (var userListConcertItem in userListConcertItems){
-      console.log(userListConcertItem)
+      // console.log(userListConcertItem)
       $('#userListConcertItems').append("<li>" + userListConcertItems[userListConcertItem] + "</li>");
     }
     // for (let userListConcertItem in userListConcertItem) {
@@ -93,25 +93,40 @@ sk.filterList = function(concertList) {
     return value.type === "Concert"
   })
   var slicedConcerts = concertsOnly.slice(0, 20)
-  sk.putConcertsInTemplate(slicedConcerts);
-
+  sk.addArtistNameToObject(slicedConcerts);
+  // sk.getArtistImage(slicedConcerts)
+  console.log(slicedConcerts)
 };
 
 
-sk.putConcertsInTemplate = function(concertList){
-  var concertTemplate = $('#concertList').html();
-  var compiledConcertTemplate = Handlebars.compile(concertTemplate);
+sk.addArtistNameToObject = function(concertList){
+  // console.log('concert list: ', concertList);
+  // let template = '';
+  // for (var concert in concertList){
+  //   $('').append ( `
+  //     `)
+  // }
   concertList.forEach(function(concert){
-    // console.log(concert)
-
-
-    // var artistName = concert.performance[0].displayName
-    // $('.artist').append('<h3>' + artistName + '</h3>')
-
-
-    $('#concertListItems').append(compiledConcertTemplate(concert));
+    var artistName = concert.performance[0].displayName;
+  
+    // const { concert: }{performance[0]: displayName} } = concert;
+    // console.log(`${artistName}`)
+    concert.artistName = artistName;
+    // sk.getArtistImage(artistName);
+    // sk.deconstructObject('concert list: ', concertList)
+    // console.log(artistName);
+    // console.log(concert);
+    // $('.artist').append('<h3>' + artistName + '</h3>');
+    // $('#concertListItems').append(`<li>${artistName}</li>`);
+    //concertList now has the artist name in it
   });
+  sk.getArtistsImages(concertList);  
 };
+
+// sk.deconstructObject = function(concert){
+//   console.log(concert)
+
+// }
 
 
 // http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
@@ -127,25 +142,73 @@ sk.putConcertsInTemplate = function(concertList){
 // get artist images
 
 // figre out how to append this
-sk.getArtistImage = function () {
-  $.ajax({
-    url: `https://music-api.musikki.com/v1/artists`,
-    method: 'GET',
-    dataType: 'json',
-    data: {
-      // make the q: a variable input based on grabbing the artist name
-      q: 'French Montana',
-      appkey: '7039c8a27b6cbabadb760d4890a3011e',
-      appid: '294aaa1e4e2e356b1873051727fa0456'
-    }
-  }).then(function (artist) {
-      console.log(artist.results[0].image);
+sk.getArtistsImages = function (concertList) {
+  var artistImages = [];
+
+  artistImages = concertList.map(function(concert) {
+    return $.ajax({
+      url: `https://music-api.musikki.com/v1/artists`,
+      method: 'GET',
+      dataType: 'json',
+      data: {
+        // make the q: a variable input based on grabbing the artist name
+        q: concert.artistName,
+        appkey: '7039c8a27b6cbabadb760d4890a3011e',
+        appid: '294aaa1e4e2e356b1873051727fa0456'
+      }
+    });
   });
+
+  $.when(...artistImages)
+    .done(function(...promises) {
+      promises.forEach(function(promise, index) {
+        concertList[index].image = promise[0].results[0].image;
+      });
+      console.log(concertList);
+      sk.sendObjectToHandlebarTemplate(concertList);
+    });
+  // $.ajax({
+  //   url: `https://music-api.musikki.com/v1/artists`,
+  //   method: 'GET',
+  //   dataType: 'json',
+  //   data: {
+  //     // make the q: a variable input based on grabbing the artist name
+  //     q: artist,
+  //     appkey: '7039c8a27b6cbabadb760d4890a3011e',
+  //     appid: '294aaa1e4e2e356b1873051727fa0456'
+  //   }
+  // }).then(function (artist) {
+  //     var artistImage = artist.results[0].image;
+  //     // sk.addArtistImageToObject(artistImage)
+
+  //     //now we need to add artistImage as a property of our ConcertList Object
+  //     // console.log(artist.results[0].image);
+  //     // console.log(artist)
+  // });
 };
+
+
+//need an object that already has all the proerties were sending to HB. Then send to HB object
+//all data must be received before sending to HB
+
+sk.sendObjectToHandlebarTemplate = function(concertList){
+  var concertTemplate = $('#concertList').html();
+  var compiledConcertTemplate = Handlebars.compile(concertTemplate);
+
+  concertList.forEach(function(concert){
+    $('#concertListItems').append(compiledConcertTemplate(concert));
+  
+  })
+
+
+}
+
+
+
 
 sk.init = function() {
   // remove getArtistImage from here once we call it in another function
-  sk.getArtistImage();
+  // sk.getArtistImage();
   sk.locationEvent();
 
 };
