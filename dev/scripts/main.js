@@ -20,12 +20,14 @@ $(function(){
   });
   // });
 
-  skRef('userConcertList').on('value', function(res){
-    $('.concertListItems').empty();
-    var userConcertListItems = res.val();
-    for (let userConcertListItem in userConcertListItems) {
-      $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
-    }
+  skRef.on('value', function(res){
+    console.log(res)
+    $('#userListConcertItems').text(res);
+    // $('.concertListItems').empty();
+    // var userConcertListItems = res.val();
+    // for (let userConcertListItem in userConcertListItems) {
+    //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
+    // }
   });
 });
 
