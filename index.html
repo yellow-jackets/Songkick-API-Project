@@ -11,8 +11,8 @@
 	<script id="concertList" type="x-handlebars-template">
 		<li id = "concertListItem" class="concertListItem">
 			<ul>
-				<li><h3>{{displayName}}</h3></li>
-				<li><img src="{{spotify.image}}" /></li>
+				<li class="artist"><h3></h3></li>
+				<li><img src={{spotify.image}}></li>
 				<li><h4>{{start.time}}</h4></li>
 				<li><h4>{{venue.displayName}}</h4></li>
 				<li><h4>{{popularity}}</h4></li>
@@ -43,7 +43,6 @@
 				<p><span class="steps">Step 3:</span> Share the list with your friends so they can add their favs</p>
 			</div>
 			<form class="locationForm">
-				<input type="text" name="usersName" value="Your First Name" class="usersName">
 				<input type="text" name="usersLocation" value="Your Location" class="usersLocation">
 				<input type="submit" class="submitButton" name="submit" value="Get Shows">
 			</form>

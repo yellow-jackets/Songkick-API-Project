@@ -1,7 +1,7 @@
-
+  
   // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyA8FFMyn81ZNHNmY6EUHIuiyyb4Wq_MBvQ",
+    apiKey: "pE1BwpmMDHJdfs9n",
     authDomain: "songkick-19f05.firebaseapp.com",
     databaseURL: "https://songkick-19f05.firebaseio.com",
     projectId: "songkick-19f05",
@@ -18,14 +18,14 @@ $(function(){
     const concertDetails = $(this).text();
     skRef.push(concertDetails);
   });
-  // });
 
   skRef.on('value', function(res){
-    console.log(res)
-    $('#userListConcertItems').text(res);
-    // $('.concertListItems').empty();
-    // var userConcertListItems = res.val();
-    // for (let userConcertListItem in userConcertListItems) {
+    var userListConcertItems = res.val();
+    for (var userListConcertItem in userListConcertItems){
+      console.log(userListConcertItem)
+      $('#userListConcertItems').append("<li>" + userListConcertItems[userListConcertItem] + "</li>");
+    }
+    // for (let userListConcertItem in userListConcertItem) {
     //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
     // }
   });
@@ -34,21 +34,34 @@ $(function(){
 const sk = {};
 
 sk.apiKey = 'hHSjLHKTmsfByvxU';
-sk.city = 'toronto';
 
 
 // write a function to get the users location from field on submit
 sk.locationResults = ""
 
+sk.locationEvent = function(){
+  $('form').on('submit', function(e){
+    e.preventDefault();
+    let userCity = $('.usersLocation').val();
+   let userCityLowerCase = userCity.toLowerCase();
+  let userCityCapitalized = userCityLowerCase.charAt(0).toUpperCase() + userCityLowerCase.substr(1);
+   sk.getMatchingCities(userCityCapitalized);
+   $('.usersLocation').val('');
+   $('#concertListItems').empty();
+  });
+
+  // sk.getMatchingCities(userCity)
+}
+
 // cities that match query
-sk.getMatchingCities = function () {
+sk.getMatchingCities = function (userCity) {
   $.ajax({
     url: 'http://api.songkick.com/api/3.0/search/locations.json',
     method: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsoncallback',
     data: {
-      query: sk.city,
+      query: userCity,
       apikey: sk.apiKey
     }
   }).then(function (locationResults) {
@@ -68,29 +81,41 @@ sk.getCityShows = function (id) {
       apikey: sk.apiKey
     }
   }).then(function (res) {
-      sk.filterListByPopularity(res)
+      sk.filterList(res)
   });
 };
 
 
-sk.filterListByPopularity = function(concertList) {
+sk.filterList = function(concertList) {
   let drilledToConcertArray = concertList.resultsPage.results.event
-    var concertsByPop = drilledToConcertArray.sort(function(obj1, obj2){
-      return  obj2.popularity - obj1.popularity;
+  var concertsByPop = drilledToConcertArray.sort(function(obj1, obj2){
+    return  obj2.popularity - obj1.popularity;
   })
-  var slicedConcerts =concertsByPop.slice(0, 20)
+  var concertsOnly = concertsByPop.filter(function(value){
+    return value.type === "Concert"
+  })
+  var slicedConcerts = concertsOnly.slice(0, 20)
   sk.putConcertsInTemplate(slicedConcerts);
+
 };
+
 
 sk.putConcertsInTemplate = function(concertList){
   var concertTemplate = $('#concertList').html();
   var compiledConcertTemplate = Handlebars.compile(concertTemplate);
   concertList.forEach(function(concert){
     // console.log(concert)
+
+
+    // var artistName = concert.performance[0].displayName
+    // $('.artist').append('<h3>' + artistName + '</h3>')
+
+
     $('#concertListItems').append(compiledConcertTemplate(concert));
   });
-
 };
+
+
 // http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
 
 //get location id and make second songkickajax request for concerts
@@ -121,9 +146,13 @@ sk.getArtistImage = function () {
 };
 
 sk.init = function() {
+<<<<<<< HEAD
   sk.getMatchingCities();
   // remove getArtistImage from here once we call it in another function
   sk.getArtistImage();
+=======
+  sk.locationEvent();
+>>>>>>> 4b0ecee5b3f680668f5cfc7231e24eb44ec60d9a
 };
 
 
