@@ -49,8 +49,6 @@ sk.locationEvent = function(){
    $('.usersLocation').val('');
    $('#concertListItems').empty();
   });
-
-  // sk.getMatchingCities(userCity)
 }
 
 // cities that match query
@@ -146,13 +144,10 @@ sk.getArtistImage = function () {
 };
 
 sk.init = function() {
-<<<<<<< HEAD
-  sk.getMatchingCities();
   // remove getArtistImage from here once we call it in another function
   sk.getArtistImage();
-=======
   sk.locationEvent();
->>>>>>> 4b0ecee5b3f680668f5cfc7231e24eb44ec60d9a
+
 };
 
 
