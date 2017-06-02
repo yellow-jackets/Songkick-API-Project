@@ -1,7 +1,7 @@
-
+  
   // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyA8FFMyn81ZNHNmY6EUHIuiyyb4Wq_MBvQ",
+    apiKey: "pE1BwpmMDHJdfs9n",
     authDomain: "songkick-19f05.firebaseapp.com",
     databaseURL: "https://songkick-19f05.firebaseio.com",
     projectId: "songkick-19f05",
@@ -21,11 +21,12 @@ $(function(){
   // });
 
   skRef.on('value', function(res){
-    console.log(res)
-    $('#userListConcertItems').text(res);
-    // $('.concertListItems').empty();
-    // var userConcertListItems = res.val();
-    // for (let userConcertListItem in userConcertListItems) {
+    var userListConcertItems = res.val();
+    for (var userListConcertItem in userListConcertItems){
+      console.log(userListConcertItem)
+      $('#userListConcertItems').append("<li>" + userListConcertItems[userListConcertItem] + "</li>");
+    }
+    // for (let userListConcertItem in userListConcertItem) {
     //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
     // }
   });
@@ -34,21 +35,34 @@ $(function(){
 const sk = {};
 
 sk.apiKey = 'hHSjLHKTmsfByvxU';
-sk.city = 'toronto';
 
 
 // write a function to get the users location from field on submit
 sk.locationResults = ""
 
+sk.locationEvent = function(){
+  $('form').on('submit', function(e){
+    e.preventDefault();
+    let userCity = $('.usersLocation').val();
+   let userCityLowerCase = userCity.toLowerCase();
+  let userCityCapitalized = userCityLowerCase.charAt(0).toUpperCase() + userCityLowerCase.substr(1);
+   sk.getMatchingCities(userCityCapitalized);
+   $('.usersLocation').val('');
+   $('#concertListItems').empty();
+  });
+
+  // sk.getMatchingCities(userCity)
+}
+
 // cities that match query
-sk.getMatchingCities = function () {
+sk.getMatchingCities = function (userCity) {
   $.ajax({
     url: 'http://api.songkick.com/api/3.0/search/locations.json',
     method: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsoncallback',
     data: {
-      query: sk.city,
+      query: userCity,
       apikey: sk.apiKey
     }
   }).then(function (locationResults) {
@@ -102,7 +116,7 @@ sk.putConcertsInTemplate = function(concertList){
 //figure out hot update userConcertListItems with firebase->handlebar template for the userConcertListItems
 
 sk.init = function() {
-  sk.getMatchingCities();
+  sk.locationEvent();
 };
 
 
