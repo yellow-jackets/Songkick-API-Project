@@ -6,6 +6,7 @@
 		
 	<link rel="stylesheet" href="public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+	<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
 	
 	<script id="concertList" type="x-handlebars-template">
@@ -13,10 +14,11 @@
 			<ul>
 				<li><h3>{{artistName}}</h3></li>
 				<li><img src={{image}}></li>
-				<li><h4>{{start.date}}</h4></li>
-				<li><h4>{{venue.displayName}}</h4></li>
-				<li><h4>{{popularity}}</h4></li>
-				<li><h4><a href="{{uri}}">Website</a></h4></li>
+				<li><h4>Playing at {{venue.displayName}} on {{concertDate}}</h4></li>
+				<li><h4>Rated {{artistPopularity}}%</h4></li>
+				<li><h4>Check out the <a href="{{uri}}">website</a> for more details</h4></li>
+				<li><h4 class="NewPop"></h4></li>
+				<li><h4 class="NewDate"></h4></li>
 			</ul>	
 		</li>
 	</script>
@@ -35,7 +37,10 @@
 </head>
 <body>
 	<main>
-		<h1>How <span>lit</span> is your list?</h1>
+		<div class="logo">
+			<img src="images/logoSample.png" alt="Lit List logo image">
+		</div>
+		<!-- <h1><span>Lit</span>list</h1> -->
 		<div class="landingPageTicket">
 			<div>
 				<p><span class="steps">Step 1:</span> Where are you? Find concerts in your city</p>
@@ -50,18 +55,19 @@
 	</main>	
 
 	<section id="concerts">
-		<h2 class="concerts">What's up in <span class="location"></span></h2>
+		<h2 class="location"></h2>
 		<ul id="concertListItems">
-
 		</ul>
 	</section> <!--./concertList-->
 
-	<section class="userListSection">
+	<div class="userListSection">
+		<div class="expandTray">
 		<h2 class="trayTitle">The Lit List</h2>
 			<ul id="userListConcertItems">
 				
 			</ul>
-	</section>
+		</div>
+	</div>
 	<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="./public/scripts/main.js"></script>

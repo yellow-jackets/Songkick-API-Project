@@ -5,18 +5,33 @@ $white: #ffffff;
 
 // @import "../partials/setup";
 body {
-	background-color: $lightGrey;
 	font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-	text-transform: uppercase;
+main {
+	background-image: url(http://az616578.vo.msecnd.net/files/2017/02/11/636224379488419975-468861575_Crowd_34201891.jpg);
+	background-position: center;
+	height: 100vh;
+}
+
+ul {
+	list-style-type: none;
+}
+
+
+.logo {
+	margin: 0 20px;
 	text-align: center;
-	font-family: 'Oswald', sans-serif;
-	font-size: 60px;
-	span {
-		color: $yellow;
-	}
+
+}
+
+.landingPageTicket {
+	background-color: $lightGrey;
+	padding: 30px;
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+	
 }
 
 p {
@@ -26,6 +41,7 @@ p {
 		text-transform: uppercase;
 	}
 }
+
 
 input[type="text"] {
 	border: none;
@@ -38,3 +54,25 @@ input[type="submit"] {
 	color: $white;
 	text-transform: uppercase;
 }
+
+
+
+
+// .userListSelection {
+//     width:100px;
+//     height: 500px;
+//     background:red;
+//    opacity:0.5;
+//     position: absolute;
+//     left:0;
+// }
+
+// .expandTray {
+//     white-space: nowrap;
+//     height: 500px;
+//     background:red;
+//    opacity:0.5;
+//     position: absolute;
+//     left:-999px;
+//     padding:8px;
+// }

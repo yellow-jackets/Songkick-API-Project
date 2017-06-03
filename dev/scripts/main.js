@@ -64,7 +64,7 @@ sk.getMatchingCities = function (userCity) {
     }
   }).then(function (locationResults) {
       sk.locationResults = locationResults.resultsPage.results.location[0];
-    $('.location').html(sk.locationResults.city.displayName);
+    $('.location').html(`What's up in ${sk.locationResults.city.displayName}?`);
     sk.getCityShows(sk.locationResults.metroArea.id);
   });
 };
@@ -93,9 +93,11 @@ sk.filterList = function(concertList) {
     return value.type === "Concert"
   })
   var slicedConcerts = concertsOnly.slice(0, 20)
+
   sk.addArtistNameToObject(slicedConcerts);
   // sk.getArtistImage(slicedConcerts)
   console.log(slicedConcerts)
+  // var popularityy = 
 };
 
 
@@ -108,10 +110,13 @@ sk.addArtistNameToObject = function(concertList){
   // }
   concertList.forEach(function(concert){
     var artistName = concert.performance[0].displayName;
-  
-    // const { concert: }{performance[0]: displayName} } = concert;
-    // console.log(`${artistName}`)
+    var givenConcertDate = new Date((concert.start.date).replace(/-/g, '\/').replace(/T.+/, ''));
+    var concertDate = givenConcertDate.toString("dddd MMMM d, yyyy");
+    var popularityOutOfTen = ((concert.popularity)*100).toFixed(1);
+
     concert.artistName = artistName;
+    concert.concertDate = concertDate
+    concert.artistPopularity = popularityOutOfTen;
     // sk.getArtistImage(artistName);
     // sk.deconstructObject('concert list: ', concertList)
     // console.log(artistName);
@@ -206,7 +211,14 @@ sk.sendObjectToHandlebarTemplate = function(concertList){
 
   concertList.forEach(function(concert){
     $('#concertListItems').append(compiledConcertTemplate(concert));
-  
+
+    // $('.NewPop').append((concert.popularity)*100);
+
+    // var GivenConcertDate = new Date(concert.start.date);
+    // var concertDate = GivenConcertDate.toString("dddd MMMM d, yyyy");
+    // console.log(concertDate);
+
+    // $('.NewDate').append(concertDate);
   })
 
 
@@ -216,8 +228,6 @@ sk.sendObjectToHandlebarTemplate = function(concertList){
 
 
 sk.init = function() {
-  // remove getArtistImage from here once we call it in another function
-  // sk.getArtistImage();
   sk.locationEvent();
 
 };
