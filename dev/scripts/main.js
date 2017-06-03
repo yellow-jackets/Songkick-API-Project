@@ -15,7 +15,7 @@ const skRef = firebase.database().ref('/UserConcertList');
 
 $(function(){
   $('#concertListItems').on('click', '.concertListItem', function() {
-    const concertDetails = $(this).text();
+    const concertDetails = $(this).html();
     skRef.push(concertDetails);
   });
 
@@ -141,7 +141,7 @@ sk.addArtistNameToObject = function(concertList){
 
 // get artist images
 
-// figre out how to append this
+// figure out how to append this
 sk.getArtistsImages = function (concertList) {
   var artistImages = [];
 
@@ -159,14 +159,23 @@ sk.getArtistsImages = function (concertList) {
     });
   });
 
-  $.when(...artistImages)
+  $.when(...artistImages) 
     .done(function(...promises) {
+       // if the image doesn't existin the promise, we want to append a new object property with a value of a default image
       promises.forEach(function(promise, index) {
+        // right now we're just going to skip over adding any images to all objects..
+        if( promise[0].results[0] === undefined ) {
+          concertList[index].image = "https://unsplash.it/300?random"
+        } else {
         concertList[index].image = promise[0].results[0].image;
+        }
       });
       console.log(concertList);
       sk.sendObjectToHandlebarTemplate(concertList);
     });
+
+
+
   // $.ajax({
   //   url: `https://music-api.musikki.com/v1/artists`,
   //   method: 'GET',
