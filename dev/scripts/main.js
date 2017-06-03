@@ -12,6 +12,7 @@ firebase.initializeApp(config);
 
 const skRef = firebase.database().ref('/UserConcertList');
  
+var filteredList = [];
 
 $(function(){
   $('#concertListItems').on('click', '.concertListItem', function() {
@@ -21,15 +22,26 @@ $(function(){
 
   skRef.on('value', function(res){
     var userListConcertItems = res.val();
+    
     for (var userListConcertItem in userListConcertItems){
-      // console.log(userListConcertItem)
-      $('#userListConcertItems').append("<li>" + userListConcertItems[userListConcertItem] + "</li>");
+      filteredList.push(userListConcertItems[userListConcertItem]);
+      filteredList = _.uniq(filteredList);
     }
+
+    filteredList.forEach(function(element) {
+      $('#userListConcertItems').append("<li>" + element + "</li>");
+      console.log(element)
+      
+    });
     // for (let userListConcertItem in userListConcertItem) {
     //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
     // }
+    // console.log(_.uniq(filteredList))
+    // console.log(...filteredList)
   });
 });
+
+
 
 const sk = {};
 
