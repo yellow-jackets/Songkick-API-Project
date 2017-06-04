@@ -18,10 +18,7 @@ sk.apiKey = 'hHSjLHKTmsfByvxU';
 
 var filteredList = [];
 
-sk.init = function () {
-  sk.locationEvent();
-  sk.events();
-};
+
 
 sk.addConcert = function () {
   $('#concertListItems').on('click', '.concertListItem', function () {
@@ -261,7 +258,7 @@ sk.drawerSlide = function() {
     });
 };
 
-}
+
 
 
 sk.smoothScroll = function () {
@@ -277,14 +274,17 @@ sk.events = function () {
   sk.addConcert();
 }
 
-
-
-sk.init = function() {
+sk.init = function () {
   sk.locationEvent();
+  sk.events();
   sk.drawerSlide();
-
-
 };
+
+// sk.init = function() {
+//   sk.locationEvent();
+ 
+
+// };
 
 
 
