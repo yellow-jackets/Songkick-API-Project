@@ -51,7 +51,7 @@ input[type="submit"], button{
 	font-family: 'Oswald', sans-serif;
 	color: $white;
 	text-transform: uppercase;
-
+}
 .expandTray {
 	clear:both;
 }
@@ -99,10 +99,8 @@ input[type="submit"], button{
 	margin: 0 20px;
 	text-align: center;
 	width: calc(100% - 40px);
+	}
 	img {
 		width: 100%;
 	}
-
-}
-
 }
