@@ -76,7 +76,7 @@ sk.getMatchingCities = function (userCity) {
     }
   }).then(function (locationResults) {
       sk.locationResults = locationResults.resultsPage.results.location[0];
-    $('.location').html(`What's up in ${sk.locationResults.city.displayName}?`);
+    $('.location').html(`What's <span>LIT</span> in ${sk.locationResults.city.displayName}?`);
     sk.getCityShows(sk.locationResults.metroArea.id);
   });
 };

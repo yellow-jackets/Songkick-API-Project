@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
 	<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	
 	<script id="concertList" type="x-handlebars-template">
 		<li id = "concertListItem" class="concertListItem">
@@ -16,8 +17,9 @@
 				<li><img src={{image}}></li>
 				<li><h4>Playing at {{venue.displayName}} on {{concertDate}}</h4></li>
 				<li><h4>Rated {{artistPopularity}}%</h4></li>
-				<li><h4>Check out the <a href="{{uri}}">website</a> for more details</h4></li>
-			</ul>	
+				<li><h4>Check out info <a href="{{uri}}"><img class="songkickLogo" src="images/by-songkick-black.png"></a></h4></li>
+				<li><button>LIT that @#$%!</button></li>
+			</ul>
 		</li>
 	</script>
 	<script id="userList" type="x-handlebars-template">
@@ -27,7 +29,7 @@
 				<li><img src={{image}}></li>
 				<li><h4>Playing at {{venue.displayName}} on {{concertDate}}</h4></li>
 				<li><h4>Rated {{artistPopularity}}%</h4></li>
-				<li><h4>Check out the <a href="{{uri}}">website</a> for more details</h4></li>
+				<li><h4>Check out info <a href="{{uri}}"><img class="songkickLogo" src="images/by-songkick-black.png"></a></h4></li>
 			</ul>	
 		</li>
 	</script>
@@ -41,25 +43,24 @@
 		<div class="landingPageTicket">
 			<div>
 				<p><span class="steps">Step 1:</span> Where are you? Find concerts in your city</p>
-				<p><span class="steps">Step 2:</span> If they're lit, add them to the list</p>
+				<p><span class="steps">Step 2:</span> If they're <span>lit</span>, add them to the list</p>
 				<p><span class="steps">Step 3:</span> Share the list with your friends so they can add their favs</p>
 			</div>
 			<form class="locationForm">
-				<input type="text" name="usersLocation" value="Your Location" class="usersLocation">
+				<input type="text" name="usersLocation" value="" class="usersLocation">
 				<input type="submit" class="submitButton" name="submit" value="Get Shows">
 			</form>
 		</div>
 	</main>	
-
-	<section id="concerts">
+	<div id="concerts">
 		<h2 class="location"></h2>
-		<ul id="concertListItems">
+		<ul id="concertListItems" class="clearfix">
 		</ul>
-	</section> <!--./concertList-->
+	</div> <!--./concertList-->
 
 	<div class="userListSection">
 		<div class="expandTray">
-		<h2 class="trayTitle">The Lit List</h2>
+		<h2 class="trayTitle">The <span>Lit </span>List</h2>
 			<ul id="userListConcertItems">
 				
 			</ul>
