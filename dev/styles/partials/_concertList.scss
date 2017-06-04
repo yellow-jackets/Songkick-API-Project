@@ -1,5 +1,5 @@
 
- h3, h4 {
+h3, h4 {
 	margin: 5px;
 }
 
@@ -9,7 +9,7 @@ ul {
 }
 
 #concerts {
-	max-width: 800px;
+	max-width: 980px;
 	margin: 10px auto;
 
 	h2 {
@@ -17,112 +17,84 @@ ul {
 	}
 }
 
-.concertListItem {
-	float: left;
-	width: calc(25% - (60px / 4));
-	margin: 10px 20px 10px 0px;
-	text-align: center;
-	border: 2px solid black;
+//this ensures all concert tickets are the same height
+.concertListItem ul {
+	margin: 5px;
+	background-color:$lightGrey;
+	min-height: 460px;
 	position: relative;
+}
+
+ //this get the concert button yellow and styled
+.concertListItem ul li button {
+	position: absolute;
+	bottom: 15px;
+	width: 70%;
+	right: 50%;
+	transform: translateX(50%);
+	background-color: $yellow;
+	font-family: 'Oswald', sans-serif;
+	border: 2px solid white;
+}
+
+
+//good 'ol calc ;) and some media queries
+
+.concertListItem {
+	  	float: left;
+	  	width: calc(25% - (60px / 4));
+	 	margin: 10px 20px 10px 0px;
+	  	text-align: center;
+	  	border: 2px solid black;
 	h3 {
 		font-family: 'Oswald', sans-serif;
 	}
 	h4 {
 		font-size: 16px;
 	}
-	img {
+	.bandImage {
 		filter: grayscale(100%);
-		display: block;
- 		width: 100%;
+    	display: block;
+    	width: 100%;
+    	object-fit: cover;
+  		height:200px;
+	}
+	.songkickLogo {
+		max-width: 80px;
+		margin: auto;
 	}
 }
+
 .concertListItem:nth-of-type(4n) {
-	margin-right: 0;
-
+  	margin-right: 0;
 }
 
-// #concertListItem:hover .overlay{
-// 	display:block;
-// }
 
-.concertListItem ul {
-	margin: 5px;
-	background-color:$lightGrey;
-	min-height: 460px;
-}
-.concertListItem ul li button {
-	background-color: $yellow;
-	font-family: 'Oswald', sans-serif;
-	border: 1px solid black;
-	}
-
-.songkickLogo {
-	max-width: 80px;
-	margin: auto;
-}
-.trayTitle {
-	background: red;
-}
-
-//added this to style.css
-//this ensures all concert tickets are the same height
- .concertListItem ul {
-  margin: 5px;
-  background-color: #B7B7B7;
-  min-height: 460px; }
-
-  //this get the concert button yellow and styled
-
-    .concertListItem ul li button {
-  background-color: #F6D70E;
-  font-family: 'Oswald', sans-serif;
-  border: 1px solid black;
-  }
-
-  //good 'ol calc ;) and some media queries
-
-  .concertListItem {
-  float: left;
-  width: calc(25% - (60px / 4));
-  margin: 10px 20px 10px 0px;
-  text-align: center;
-  border: 2px solid black; }
-  .concertListItem h3 {
-    font-family: 'Oswald', sans-serif; }
-  .concertListItem h4 {
-    font-size: 16px; }
-  .concertListItem img {
-    filter: grayscale(100%);
-    display: block;
-    width: 100%; }
-.concertListItem:nth-of-type(4n) {
-  margin-right: 0;
-}
 
 @media (max-width: 768px) {
 
-.concertListItem {
-	float: left;
-	width: calc(50% - (20px / 2));
-	margin: 10px 20px 10px 0px;}
-.concertListItem:nth-of-type(2n) {
-	margin-right: 0;
+	.concertListItem {
+		float: left;
+		width: calc(50% - (20px / 2));
+		margin: 10px 20px 10px 0px;
+	}
+	.concertListItem:nth-of-type(2n) {
+		margin-right: 0;
 	}
 }
+
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
 	.concertListItem {
-	width: calc(100% - 20px);
-	margin: 10px 10px 10px 10px;}
-	.logo {
-	margin: 0 20px;
-	text-align: center;
-	width: calc(100% - 40px);
-	img {
-		width: 100%;
+		width: calc(100% - 20px);
+		margin: 10px 10px 10px 10px;}
+		.logo {
+		margin: 0 20px;
+		text-align: center;
+		width: calc(100% - 40px);
+		img {
+			width: 100%;
+		}
 	}
-
-}
-
-
 }

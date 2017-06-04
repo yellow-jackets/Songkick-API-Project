@@ -11,11 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	
 	<script id="concertList" type="x-handlebars-template">
-		<li id = "concertListItem" class="concertListItem">
+		<li id="concertListItem" class="concertListItem">
 			<ul>
 				<li><h3>{{artistName}}</h3></li>
-				<li><img src={{image}}></li>
-				<li><h4>Playing at {{venue.displayName}} on {{concertDate}}</h4></li>
+				<li><img class="bandImage" src={{image}}></li>
+				<li><h4>Playing at {{venue.displayName}}</h4></li>
+				<li><h4>on {{concertDate}}</h4></li>
 				<li><h4>Rated {{artistPopularity}}%</h4></li>
 				<li><h4>Check out info <a href="{{uri}}"><img class="songkickLogo" src="images/by-songkick-black.png"></a></h4></li>
 				<li><button>LIT that @#$%!</button></li>
@@ -23,13 +24,14 @@
 		</li>
 	</script>
 	<script id="userList" type="x-handlebars-template">
-		<li class="userListConcertItem">
+		<li class="userListConcertItem clearfix">
 			<ul>
-				<li><h3>{{artistName}}</h3></li>
-				<li><img src={{image}}></li>
-				<li><h4>Playing at {{venue.displayName}} on {{concertDate}}</h4></li>
-				<li><h4>Rated {{artistPopularity}}%</h4></li>
-				<li><h4>Check out info <a href="{{uri}}"><img class="songkickLogo" src="images/by-songkick-black.png"></a></h4></li>
+				// <li><img class="bandImage" src={{image}}></li>
+				// <li><h3>{{artistName}}</h3></li>
+				// <li><h4>Playing at {{venue.displayName}}</h4></li>
+				// <li><h4>on {{concertDate}}</h4></li>
+				// <li><h4>Rated {{artistPopularity}}%</h4></li>
+				// <li><h4>Check out info <a href="{{uri}}"><img class="songkickLogo" src="images/by-songkick-black.png"></a></h4></li>
 			</ul>	
 		</li>
 	</script>
@@ -39,17 +41,19 @@
 		<div class="logo">
 			<img src="images/logoSample.png" alt="Lit List logo image">
 		</div>
-		<!-- <h1><span>Lit</span>list</h1> -->
 		<div class="landingPageTicket">
-			<div>
+			<div class="instructions">
 				<p><span class="steps">Step 1:</span> Where are you? Find concerts in your city</p>
 				<p><span class="steps">Step 2:</span> If they're <span>lit</span>, add them to the list</p>
 				<p><span class="steps">Step 3:</span> Share the list with your friends so they can add their favs</p>
+				<form class="locationForm">
+					<input type="text" name="usersLocation" placeholder="Location" value="" class="usersLocation">
+					<input type="submit" class="submitButton" name="submit" value="Get Shows">
+				</form>
 			</div>
-			<form class="locationForm">
-				<input type="text" name="usersLocation" value="" class="usersLocation">
-				<input type="submit" class="submitButton" name="submit" value="Get Shows">
-			</form>
+			<div class="barcodeDiv">
+				<img class="barcode" src="images/litBarcode.png">
+			</div>
 		</div>
 	</main>	
 	<div id="concerts">
@@ -58,19 +62,20 @@
 		</ul>
 	</div> <!--./concertList-->
 
-	<div class="userListSection">
-		<div class="expandTray">
-		<h2 class="trayTitle">The <span>Lit </span>List</h2>
-			<ul id="userListConcertItems">
-				
-			</ul>
-	</section>
-	
+	<div class ="collapsedTray">
+			<header class="trayTitle">The <span>Lit </span>List</header>
+		<div class="userListSection expandTray">
+				<ul id="userListConcertItems" class="clearfix">
+					
+				</ul>
 		</div>
-	</div>
+    </div>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="./public/scripts/main.js"></script>
+
 </body>
 </html>

@@ -214,6 +214,7 @@ sk.getArtistsImages = function (concertList) {
 };
 
 
+
 //need an object that already has all the proerties were sending to HB. Then send to HB object
 //all data must be received before sending to HB
 
@@ -234,13 +235,26 @@ sk.sendObjectToHandlebarTemplate = function(concertList){
   })
 
 
-}
+};
+
+sk.drawerSlide = function() {
+  $('.collapsedTray').click(function(){
+   var $lefty = $('.expandTray');
+    $lefty.animate({
+      left: parseInt($lefty.css('left'),10) == 0 ?
+        -$lefty.outerWidth() :
+        0
+});
+    });
+};
 
 
 
 
 sk.init = function() {
   sk.locationEvent();
+  sk.drawerSlide();
+
 
 };
 

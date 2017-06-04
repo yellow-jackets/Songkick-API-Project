@@ -5,30 +5,50 @@ $white: #ffffff;
 
 @import "partials/setup";
 @import "partials/concertList";
+@import "partials/userConcertList";
 
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
 main {
-	background-image: url(http://az616578.vo.msecnd.net/files/2017/02/11/636224379488419975-468861575_Crowd_34201891.jpg);
+	background-image: url(../../images/concertHero2.jpg);
 	background-position: center;
 	height: 100vh;
 }
 
 .logo {
-	margin: 0 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	text-align: center;
 
 }
 
 .landingPageTicket {
-	background-color: $lightGrey;
+	background-color: rgba(183,183,183,0.8);
+	border: 4px solid $white;
 	padding: 30px;
 	max-width: 800px;
 	margin: 0 auto;
-	text-align: center;
-	
+	height: 250px;
+	box-shadow: 12px 15px 15px 0px rgba(183,183,183, 0.35);
+}
+
+.instructions {
+	text-align: left;
+	width: 70%;
+	float: left;
+	margin-bottom: 30px;
+}
+
+.barcodeDiv {
+	float: right;
+	width: 30%;
+}
+
+.barcode {
+	max-height: 200px;
+	float: right;	
 }
 
 span {
@@ -37,27 +57,42 @@ span {
 }
 
 p {
-	color: white;
+	color: $black;
 }
+
+
+form {
+	margin-top: 30px;
+}
+
+.usersLocation {
+	padding: 12px;
+	margin-right: 10px;
+}
+
 
 
 input[type="text"] {
 	border: none;
 }
 
-input[type="submit"], button{
+input[type="submit"]{
 	background-color: $black;
 	border: none;
 	font-family: 'Oswald', sans-serif;
 	color: $white;
 	text-transform: uppercase;
+	padding: 10px 30px;
 }
-.expandTray {
-	clear:both;
-}
-// .userListSelection {
-//     width:100px;
-//     height: 500px;
+
+
+
+
+
+
+// .userListConcertItems {
+//     // width:100px;
+//     // height: 500px;
 //     background:red;
 //    opacity:0.5;
 //     position: absolute;
@@ -81,24 +116,26 @@ input[type="submit"], button{
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
 
-.concertListItem {
-	float: left;
-	width: calc(50% - (20px / 2));
-	margin: 10px 20px 10px 0px;}
-.concertListItem:nth-of-type(2n) {
-	margin-right: 0;
+	.concertListItem {
+		float: left;
+		width: calc(50% - (20px / 2));
+		margin: 10px 20px 10px 0px;
+	}
+	.concertListItem:nth-of-type(2n) {
+		margin-right: 0;
 	}
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	.concertListItem {
-	width: 100%;
-	margin: 10px 10px 10px 10px;}
+		width: 100%;
+		margin: 10px 10px 10px 10px;
+	}
 	.logo {
-	margin: 0 20px;
-	text-align: center;
-	width: calc(100% - 40px);
+		margin: 0 20px;
+		text-align: center;
+		width: calc(100% - 40px);
 	}
 	img {
 		width: 100%;
