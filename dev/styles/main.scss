@@ -3,7 +3,9 @@ $lightGrey: #B7B7B7;
 $black: #000000;
 $white: #ffffff;
 
-// @import "../partials/setup";
+@import "partials/setup";
+@import "partials/concertList";
+
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -13,11 +15,6 @@ main {
 	background-position: center;
 	height: 100vh;
 }
-
-ul {
-	list-style-type: none;
-}
-
 
 .logo {
 	margin: 0 20px;
@@ -34,12 +31,13 @@ ul {
 	
 }
 
+span {
+	color: $yellow;
+	text-transform: uppercase;
+}
+
 p {
 	color: white;
-	span {
-		color: $yellow;
-		text-transform: uppercase;
-	}
 }
 
 
@@ -47,17 +45,16 @@ input[type="text"] {
 	border: none;
 }
 
-input[type="submit"] {
+input[type="submit"], button{
 	background-color: $black;
 	border: none;
 	font-family: 'Oswald', sans-serif;
 	color: $white;
 	text-transform: uppercase;
+
+.expandTray {
+	clear:both;
 }
-
-
-
-
 // .userListSelection {
 //     width:100px;
 //     height: 500px;
@@ -76,3 +73,36 @@ input[type="submit"] {
 //     left:-999px;
 //     padding:8px;
 // }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+.concertListItem {
+	float: left;
+	width: calc(50% - (20px / 2));
+	margin: 10px 20px 10px 0px;}
+.concertListItem:nth-of-type(2n) {
+	margin-right: 0;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.concertListItem {
+	width: 100%;
+	margin: 10px 10px 10px 10px;}
+	.logo {
+	margin: 0 20px;
+	text-align: center;
+	width: calc(100% - 40px);
+	img {
+		width: 100%;
+	}
+
+}
+
+}

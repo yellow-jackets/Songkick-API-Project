@@ -1,0 +1,64 @@
+
+ h3, h4 {
+	margin: 5px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#concerts {
+	max-width: 800px;
+	margin: 10px auto;
+
+	h2 {
+		text-align: center;
+	}
+}
+
+.concertListItem {
+	float: left;
+	width: calc(25% - (60px / 4));
+	margin: 10px 20px 10px 0px;
+	text-align: center;
+	border: 2px solid black;
+	position: relative;
+	h3 {
+		font-family: 'Oswald', sans-serif;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	img {
+		filter: grayscale(100%);
+		display: block;
+ 		width: 100%;
+}
+.concertListItem:nth-of-type(4n) {
+	margin-right: 0;
+
+}
+
+// #concertListItem:hover .overlay{
+// 	display:block;
+// }
+
+.concertListItem ul {
+	margin: 5px;
+	background-color:$lightGrey;
+	min-height: 460px;
+}
+.concertListItem ul li button {
+	background-color: $Yellow;
+	font-family: 'Oswald', sans-serif;
+	border: 1px solid black;
+	}
+
+.songkickLogo {
+	max-width: 80px;
+	margin: auto;
+}
+.trayTitle {
+	background: red;
+}
