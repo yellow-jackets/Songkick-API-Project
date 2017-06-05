@@ -262,11 +262,17 @@ sk.drawerSlide = function() {
 
 
 sk.smoothScroll = function () {
-  $('.submitButton').on('click', function() {
-    $('html, body').animate({
-        scrollTop: $('.location').offset().top
-    }, 1000);
-  });
+  $('.trigger, .slider').click(function() {
+  $('.slider').toggleClass('close');
+});
+
+
+
+  // $('.submitButton').on('click', function() {
+  //   $('html, body').animate({
+  //       scrollTop: $('.location').offset().top
+  //   }, 1000);
+  // });
 }
 
 sk.events = function () {
