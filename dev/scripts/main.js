@@ -37,7 +37,6 @@ sk.addConcert = function () {
   filteredList.forEach(function (element) {
     $('#userListConcertItems').append("<li>" + element + "</li>");
     // console.log(element)
-
   });
     // for (let userListConcertItem in userListConcertItem) {
     //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
@@ -199,27 +198,6 @@ sk.getArtistsImages = function (concertList) {
       console.log(concertList);
       sk.sendObjectToHandlebarTemplate(concertList);
     });
-
-
-
-  // $.ajax({
-  //   url: `https://music-api.musikki.com/v1/artists`,
-  //   method: 'GET',
-  //   dataType: 'json',
-  //   data: {
-  //     // make the q: a variable input based on grabbing the artist name
-  //     q: artist,
-  //     appkey: '7039c8a27b6cbabadb760d4890a3011e',
-  //     appid: '294aaa1e4e2e356b1873051727fa0456'
-  //   }
-  // }).then(function (artist) {
-  //     var artistImage = artist.results[0].image;
-  //     // sk.addArtistImageToObject(artistImage)
-
-  //     //now we need to add artistImage as a property of our ConcertList Object
-  //     // console.log(artist.results[0].image);
-  //     // console.log(artist)
-  // });
 };
 
 
@@ -247,16 +225,16 @@ sk.sendObjectToHandlebarTemplate = function (concertList) {
 
 };
 
-sk.drawerSlide = function() {
-  $('.collapsedTray').click(function(){
-   var $lefty = $('.expandTray');
-    $lefty.animate({
-      left: parseInt($lefty.css('left'),10) == 0 ?
-        -$lefty.outerWidth() :
-        0
-});
-    });
-};
+// sk.drawerSlide = function() {
+//   $('.collapsedTray').click(function(){
+//    var $lefty = $('.expandTray');
+//     $lefty.animate({
+//       left: parseInt($lefty.css('left'),10) == 0 ?
+//         -$lefty.outerWidth() :
+//         0
+// });
+//     });
+// };
 
 
 
@@ -286,7 +264,7 @@ sk.events = function () {
 sk.init = function () {
   sk.locationEvent();
   sk.events();
-  sk.drawerSlide();
+  // sk.drawerSlide();
 };
 
 // sk.init = function() {
