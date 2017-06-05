@@ -264,6 +264,7 @@ sk.drawerSlide = function() {
 sk.smoothScroll = function () {
   $('.trigger, .slider').click(function() {
   $('.slider').toggleClass('close');
+  $('.collapse').text("view/collapse");
 });
 
 }

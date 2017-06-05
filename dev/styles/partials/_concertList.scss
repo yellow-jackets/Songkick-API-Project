@@ -1,3 +1,9 @@
+
+.smoothscrollSpacer{
+	min-height: 60px;
+	float: left;
+}
+
 h3, h4 {
 	margin: 5px;
 }
@@ -19,12 +25,22 @@ ul {
 	list-style-type: none;
 	padding: 0;
 }
+.concerts {
+	width: 100%;
+	float: left;
+	background-color: $lightGrey;
+}
 
 #concerts {
 	max-width: 980px;
+	margin: 0 auto;
 	margin: 10px auto;
+	background-color: $lightGrey;
+
 	h2 {
 		text-align: center;
+		margin-bottom: 10px;
+		margin-top: 21px;
 	}
 }
 
@@ -53,6 +69,9 @@ ul {
 }
 
 //good 'ol calc ;) and some media queries
+#concertListItems {
+	margin-top: 2px;
+}
 
 .concertListItem {
 	  	float: left;
@@ -90,3 +109,27 @@ ul {
 .concertListItem:nth-of-type(4n) {
   	margin-right: 0;
 }
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.concerts{
+		width: 100%
+	}
+	#concerts {
+		width: 80%;
+		margin: auto;
+	}
+	#concertListItem {
+		width: calc(100% - 20px);
+		margin: 10;}
+		.logo {
+		margin: 0 20px;
+		text-align: center;
+		width: calc(100% - 40px);
+		img {
+			width: 100%;
+		}
+	}
+}
+
