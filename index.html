@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	
 	<script id="concertList" type="x-handlebars-template">
-		<li id="concertListItem" class="concertListItem">
+		<li id="concertListItem" class="concertListItem clearfix">
 			<ul>
 				<li><h3>{{artistName}}</h3></li>
 				<li><img class="bandImage" src={{image}}></li>
@@ -49,6 +49,7 @@
 				<img class="barcode" src="images/litBarcode.png">
 			</div>
 		</div>
+<<<<<<< HEAD
 	</main>	
 	<div class="smoothscrollSpacer"></div>
 	<div id="concerts">
@@ -56,20 +57,31 @@
 		<ul id="concertListItems" class="clearfix">
 		</ul>
 	</div> <!--./concertList-->
+=======
+	</main>
+	<div class="smoothscrollSpacer"></div>
+	 <section class="concerts">
+		<div id="concerts">
+			<h2 class="location"></h2>
+			<ul id="concertListItems" class="clearfix">
+			</ul>
+		</div> <!--./concertList-->
+	</section>
+>>>>>>> f4b5cf84d16354b15ffb1d4756fa7493b4badb5f
 
 	<div class ="slider close trigger">
-	<h2 class="trayTitle ">Click here to view the <span>Lit </span>List</h2>
-		<div class="userListSection">
+	<h2 class="trayTitle ">Click here to <span class="collapse">view</span> the <span>Lit </span>List</h2>
+		<div class="userListSection clearfix">
 				<ul id="userListConcertItems" class="clearfix">
 					
 				</ul>
 		</div>
     </div>
     <footer>
-		<div class="footerWrapper" class="clearfix">
+		<div class="footerWrapper clearfix">
 	    	<div class="twitter clearfix">
 	    		<img class="svg" src="images/globe.svg" alt="">
-	    		<p>Get Social!</p>
+	    		<!-- <p class="social">Get Social!</p> -->
 	    		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="I just added a LIT show to the LIT list! Check out what&#39;s on in your city. " data-via="atlauraduggan @evbroom @esmecodes" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	    		<div class="barcodeFooter">
 		    		<!-- <img src="images/litBarcode.png" alt=""> -->

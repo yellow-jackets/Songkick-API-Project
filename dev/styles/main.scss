@@ -10,6 +10,7 @@ $white: #ffffff;
 @import "partials/footer";
 @import "partials/mediaQueries";
 
+
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0 auto;
@@ -26,4 +27,51 @@ p {
 }
 
 
+
+input[type="text"] {
+	border: none;
+}
+
+input[type="submit"]{
+	background-color: $black;
+	border: none;
+	font-family: 'Oswald', sans-serif;
+	color: $white;
+	text-transform: uppercase;
+	padding: 10px 30px;
+}
+
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+	.concertListItem {
+		float: left;
+		width: calc(50% - (20px / 2));
+		margin: 10px 20px 10px 0px;
+	}
+	.concertListItem:nth-of-type(2n) {
+		margin-right: 0;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.concertListItem {
+		width: 100%;
+		margin: 10px 10px 10px 10px;
+	}
+	.logo {
+		margin: 0 20px;
+		text-align: center;
+		width: calc(100% - 40px);
+	}
+	img {
+		width: 100%;
+	}
+}
 

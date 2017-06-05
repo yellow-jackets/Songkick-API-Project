@@ -187,6 +187,7 @@ sk.smoothScroll = function () {
         scrollTop: $('.trayTitle').offset().top
     }, 0);
 
+  $('.collapse').text("view/collapse");
 });
 
 }
