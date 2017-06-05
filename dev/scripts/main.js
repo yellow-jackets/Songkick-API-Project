@@ -31,18 +31,14 @@ sk.addConcert = function () {
 
   for (var userListConcertItem in userListConcertItems) {
     filteredList.push(userListConcertItems[userListConcertItem]);
+    $('#userListConcertItems').empty();
     filteredList = _.uniq(filteredList);
   }
 
   filteredList.forEach(function (element) {
     $('#userListConcertItems').append("<li>" + element + "</li>");
-    // console.log(element)
-  });
-    // for (let userListConcertItem in userListConcertItem) {
-    //   $('#userConcertListItems').append("<li data-key="+userConcertListItem+">" + userConcertListItems[userConcertListItem] + "</li>");
-    // }
-    // console.log(_.uniq(filteredList))
-    // console.log(...filteredList)
+
+    });
   });
 };
 
@@ -101,33 +97,11 @@ sk.filterList = function (concertList) {
   let concertsByPop = drilledToConcertArray.sort((obj1, obj2) => obj2.popularity - obj1.popularity)
     .filter((value) => value.type === "Concert")
     .slice(0, 20);
-  // console.log(concertsByPop)
   sk.addArtistNameToObject(concertsByPop);
-
-  // ** pre-es6 code
-  // var concertsByPop = drilledToConcertArray.sort(function (obj1, obj2) {
-  //   return obj2.popularity - obj1.popularity;
-  // })
-  // var concertsOnly = concertsByPop.filter(function (value) {
-  //   return value.type === "Concert"
-  // })
-  // var slicedConcerts = concertsOnly.slice(0, 20)
-  // **
-
-  // sk.addArtistNameToObject(slicedConcerts);
-  // sk.getArtistImage(slicedConcerts)
-  // console.log(slicedConcerts)
-  // var popularityy = 
 };
 
 
 sk.addArtistNameToObject = function (concertList) {
-  // console.log('concert list: ', concertList);
-  // let template = '';
-  // for (var concert in concertList){
-  //   $('').append ( `
-  //     `)
-  // }
   concertList.forEach(function (concert) {
     var artistName = concert.performance[0].displayName;
     var givenConcertDate = new Date((concert.start.date).replace(/-/g, '\/').replace(/T.+/, ''));
@@ -137,21 +111,10 @@ sk.addArtistNameToObject = function (concertList) {
     concert.artistName = artistName;
     concert.concertDate = concertDate
     concert.artistPopularity = popularityOutOfTen;
-    // sk.getArtistImage(artistName);
-    // sk.deconstructObject('concert list: ', concertList)
-    // console.log(artistName);
-    // console.log(concert);
-    // $('.artist').append('<h3>' + artistName + '</h3>');
-    // $('#concertListItems').append(`<li>${artistName}</li>`);
-    //concertList now has the artist name in it
   });
   sk.getArtistsImages(concertList);
 };
 
-// sk.deconstructObject = function(concert){
-//   console.log(concert)
-
-// }
 
 
 // http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
@@ -211,37 +174,19 @@ sk.sendObjectToHandlebarTemplate = function (concertList) {
 
   concertList.forEach(function (concert) {
     $('#concertListItems').append(compiledConcertTemplate(concert));
-
-    // $('.NewPop').append((concert.popularity)*100);
-
-    // var GivenConcertDate = new Date(concert.start.date);
-    // var concertDate = GivenConcertDate.toString("dddd MMMM d, yyyy");
-    // console.log(concertDate);
-
-    // $('.NewDate').append(concertDate);
   })
 
 
 
 };
 
-// sk.drawerSlide = function() {
-//   $('.collapsedTray').click(function(){
-//    var $lefty = $('.expandTray');
-//     $lefty.animate({
-//       left: parseInt($lefty.css('left'),10) == 0 ?
-//         -$lefty.outerWidth() :
-//         0
-// });
-//     });
-// };
-
-
-
-
 sk.smoothScroll = function () {
   $('.trigger, .slider').click(function() {
   $('.slider').toggleClass('close');
+  $('html, body').animate({
+        scrollTop: $('.trayTitle').offset().top
+    }, 0);
+
 });
 
 }
@@ -263,14 +208,7 @@ sk.events = function () {
 sk.init = function () {
   sk.locationEvent();
   sk.events();
-  // sk.drawerSlide();
 };
-
-// sk.init = function() {
-//   sk.locationEvent();
- 
-
-// };
 
 
 
