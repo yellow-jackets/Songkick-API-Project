@@ -4,53 +4,16 @@ $black: #000000;
 $white: #ffffff;
 
 @import "partials/setup";
+@import "partials/home";
 @import "partials/concertList";
 @import "partials/userConcertList";
+@import "partials/footer";
+@import "partials/mediaQueries";
 
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0 auto;
 	min-height: 100%;
-}
-
-main {
-	background-image: url(../../images/concertHero2.jpg);
-	background-position: center;
-	height: 100vh;
-}
-
-.logo {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	text-align: center;
-
-}
-
-.landingPageTicket {
-	background-color: rgba(183,183,183,0.8);
-	border: 4px solid $white;
-	padding: 30px;
-	max-width: 800px;
-	margin: 0 auto;
-	height: 250px;
-	box-shadow: 12px 15px 15px 0px rgba(183,183,183, 0.35);
-}
-
-.instructions {
-	text-align: left;
-	width: 70%;
-	float: left;
-	margin-bottom: 30px;
-}
-
-.barcodeDiv {
-	float: right;
-	width: 30%;
-}
-
-.barcode {
-	max-height: 200px;
-	float: right;	
 }
 
 span {
@@ -63,84 +26,4 @@ p {
 }
 
 
-form {
-	margin-top: 30px;
-}
 
-.usersLocation {
-	padding: 12px;
-	margin-right: 10px;
-}
-
-
-
-input[type="text"] {
-	border: none;
-}
-
-input[type="submit"]{
-	background-color: $black;
-	border: none;
-	font-family: 'Oswald', sans-serif;
-	color: $white;
-	text-transform: uppercase;
-	padding: 10px 30px;
-}
-
-
-footer {
-	clear: both;
-	background-color: $lightGrey;
-	.footerWrapper{
-	max-width: 800px;
-	margin: 0 auto;
-		.twitter, .creators{
-			float: left;
-			text-align: center;
-			width: 50%;
-			background-color: #fff;
-			border: 2px solid black;
-		}
-	}
-}
-.creatorText {
-	float: left;
-}
-
-.svg {
-	max-width:80px;
-	float: left;
-}
-
-/* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-
-	.concertListItem {
-		float: left;
-		width: calc(50% - (20px / 2));
-		margin: 10px 20px 10px 0px;
-	}
-	.concertListItem:nth-of-type(2n) {
-		margin-right: 0;
-	}
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-	.concertListItem {
-		width: 100%;
-		margin: 10px 10px 10px 10px;
-	}
-	.logo {
-		margin: 0 20px;
-		text-align: center;
-		width: calc(100% - 40px);
-	}
-	img {
-		width: 100%;
-	}
-}
