@@ -1,6 +1,18 @@
-
 h3, h4 {
 	margin: 5px;
+}
+
+.cityHeading {
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin-top: 50px;
+}
+
+.listInstructions {
+	font-size: 16px;
+	margin-top: 0px;
+	margin-bottom: 40px;
 }
 
 ul {
@@ -11,7 +23,6 @@ ul {
 #concerts {
 	max-width: 980px;
 	margin: 10px auto;
-
 	h2 {
 		text-align: center;
 	}
@@ -37,6 +48,9 @@ ul {
 	border: 2px solid white;
 }
 
+.concertListItem ul li button:hover {
+	border: 2px solid $black;
+}
 
 //good 'ol calc ;) and some media queries
 
@@ -45,7 +59,7 @@ ul {
 	  	width: calc(25% - (60px / 4));
 	 	margin: 10px 20px 10px 0px;
 	  	text-align: center;
-	  	border: 2px solid black;
+	  	border: 2px solid $lightGrey;
 	h3 {
 		font-family: 'Oswald', sans-serif;
 	}
@@ -58,43 +72,21 @@ ul {
     	width: 100%;
     	object-fit: cover;
   		height:200px;
+  		margin-bottom: 15px;
 	}
 	.songkickLogo {
 		max-width: 80px;
-		margin: auto;
+		margin: 9px auto;
+		display: block;
 	}
+}
+
+.concertListItem:hover {
+	box-shadow: 12px 15px 15px 0px rgba(183,183,183, 0.35);
+	transform: translateY(-5px);
+	border: 2px solid $black;
 }
 
 .concertListItem:nth-of-type(4n) {
   	margin-right: 0;
-}
-
-
-
-@media (max-width: 768px) {
-
-	.concertListItem {
-		float: left;
-		width: calc(50% - (20px / 2));
-		margin: 10px 20px 10px 0px;
-	}
-	.concertListItem:nth-of-type(2n) {
-		margin-right: 0;
-	}
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-
-	.concertListItem {
-		width: calc(100% - 20px);
-		margin: 10px 10px 10px 10px;}
-		.logo {
-		margin: 0 20px;
-		text-align: center;
-		width: calc(100% - 40px);
-		img {
-			width: 100%;
-		}
-	}
 }
