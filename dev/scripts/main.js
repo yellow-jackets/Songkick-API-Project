@@ -266,17 +266,19 @@ sk.smoothScroll = function () {
   $('.slider').toggleClass('close');
 });
 
+}
 
-
-  // $('.submitButton').on('click', function() {
-  //   $('html, body').animate({
-  //       scrollTop: $('.location').offset().top
-  //   }, 1000);
-  // });
+sk.buttonScroll = function () {
+    $('.submitButton').on('click', function() {
+    $('html, body').animate({
+        scrollTop: $('.location').offset().top
+    }, 1000);
+  });
 }
 
 sk.events = function () {
   sk.smoothScroll();
+  sk.buttonScroll();
   sk.addConcert();
 }
 
