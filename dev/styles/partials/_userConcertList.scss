@@ -8,16 +8,28 @@
 
 
 
+=======
+#userListConcertItems {
+	min-height: 300px;
+}
+
+
 #userListConcertItems li ul {
 	width: 100%;
 	background-color: $lightGrey;
 	margin-bottom: 25px;
+
 	float: left;
 	// display: inline-block;
 }
 
 #userListConcertItems li ul li {
 	// width: 100%;
+	display: inline-block;
+}
+
+#userListConcertItems li ul li {
+	width: 100%;
 	text-align: left;
 	background-color: $lightGrey;
 	h3 {
@@ -26,15 +38,23 @@
 		font-size: 28px;
 		background-color: $yellow;
 		color: $black;
-		margin-left: 0px;
-		margin-right: 0px;
+		margin: 0px;
+		padding: 10px;
+		border-bottom: 4px solid black;
+		clear: both;
+	}
+	ul {
+		float: left;
 	}
 	h4 {
 		font-size: 20px;
 		// width: 55%;
 		color: $black;
 		// float: right;
-		
+
+		margin-top: 15px;
+		color: $black;
+
 	}
 	.bandImage{
 		filter: grayscale(100%);
@@ -48,16 +68,13 @@
 	.songkickLogo {
 		max-width: 80px;
 		margin: auto;
+		vertical-align: middle;
 	}
-
 }
-
 
 #userListConcertItems ul li button {
 	display: none;
 }
-
-
 
 .trayTitle {
 	text-align: center;
@@ -87,6 +104,5 @@
 .slider.close {
   // top: 100vh;
   height: 75px;
-
 }
 

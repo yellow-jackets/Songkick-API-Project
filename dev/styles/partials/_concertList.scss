@@ -1,3 +1,4 @@
+
 .smoothscrollSpacer{
 	min-height: 60px;
 	float: left;
@@ -7,6 +8,19 @@ h3, h4 {
 	margin: 5px;
 }
 
+.cityHeading {
+	font-family: 'Oswald', sans-serif;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin-top: 50px;
+}
+
+.listInstructions {
+	font-size: 16px;
+	margin-top: 0px;
+	margin-bottom: 40px;
+}
+
 ul {
 	list-style-type: none;
 	padding: 0;
@@ -14,11 +28,15 @@ ul {
 .concerts {
 	width: 100%;
 	float: left;
+	background-color: $lightGrey;
 }
 
 #concerts {
 	max-width: 980px;
 	margin: 0 auto;
+	margin: 10px auto;
+	background-color: $lightGrey;
+
 	h2 {
 		text-align: center;
 		margin-bottom: 10px;
@@ -46,6 +64,9 @@ ul {
 	border: 2px solid white;
 }
 
+.concertListItem ul li button:hover {
+	border: 2px solid $black;
+}
 
 //good 'ol calc ;) and some media queries
 #concertListItems {
@@ -57,7 +78,7 @@ ul {
 	  	width: calc(25% - (60px / 4));
 	 	margin: 10px 20px 10px 0px;
 	  	text-align: center;
-	  	border: 2px solid black;
+	  	border: 2px solid $lightGrey;
 	h3 {
 		font-family: 'Oswald', sans-serif;
 	}
@@ -70,30 +91,25 @@ ul {
     	width: 100%;
     	object-fit: cover;
   		height:200px;
+  		margin-bottom: 15px;
 	}
 	.songkickLogo {
 		max-width: 80px;
-		margin: auto;
+		margin: 9px auto;
+		display: block;
 	}
+}
+
+.concertListItem:hover {
+	box-shadow: 12px 15px 15px 0px rgba(183,183,183, 0.35);
+	transform: translateY(-5px);
+	border: 2px solid $black;
 }
 
 .concertListItem:nth-of-type(4n) {
   	margin-right: 0;
 }
 
-
-
-@media (max-width: 768px) {
-
-	.concertListItem {
-		float: left;
-		width: calc(50% - (20px / 2));
-		margin: 10px 20px 10px 0px;
-	}
-	.concertListItem:nth-of-type(2n) {
-		margin-right: 0;
-	}
-}
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -116,3 +132,4 @@ ul {
 		}
 	}
 }
+

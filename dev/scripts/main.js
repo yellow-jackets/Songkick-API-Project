@@ -77,7 +77,7 @@ sk.getMatchingCities = function (userCity) {
     }
   }).then(function (locationResults) {
     sk.locationResults = locationResults.resultsPage.results.location[0];
-    $('.location').html(`What's <span>LIT</span> in ${sk.locationResults.city.displayName}?`);
+    $('.location').html(`<h3 class="cityHeading">What's <span>LIT</span> in ${sk.locationResults.city.displayName}?</h3><p class="listInstructions">Choose some concerts below</p>`);
     sk.getCityShows(sk.locationResults.metroArea.id);
   });
 };
@@ -272,7 +272,7 @@ sk.smoothScroll = function () {
 sk.buttonScroll = function () {
     $('.submitButton').on('click', function() {
     $('html, body').animate({
-        scrollTop: $('.smoothscrollSpacer').offset().top
+        scrollTop: $('.location').offset().top
     }, 1000);
   });
 }
