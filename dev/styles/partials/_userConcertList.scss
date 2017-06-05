@@ -6,20 +6,18 @@
 	}
 }
 
-#userListConcertItems {
-	height: 240px;
-}
+
 
 #userListConcertItems li ul {
 	width: 100%;
-	// background-color: $lightGrey;
-	margin-bottom: 25px
+	background-color: $lightGrey;
+	margin-bottom: 25px;
+	float: left;
 	// display: inline-block;
 }
 
 #userListConcertItems li ul li {
-
-	width: 100%;
+	// width: 100%;
 	text-align: left;
 	background-color: $lightGrey;
 	h3 {
@@ -33,9 +31,9 @@
 	}
 	h4 {
 		font-size: 20px;
-		width: 55%;
+		// width: 55%;
 		color: $black;
-		float: right;
+		// float: right;
 		
 	}
 	.bandImage{
@@ -43,7 +41,7 @@
 		width: 40%;
     	object-fit: cover;
   		height: 300px;
-  		// float: left;
+  		float: left;
   		margin-right: 5%;
   		vertical-align: text-bottom;
 	}

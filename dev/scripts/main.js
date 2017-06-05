@@ -264,6 +264,7 @@ sk.drawerSlide = function() {
 sk.smoothScroll = function () {
   $('.trigger, .slider').click(function() {
   $('.slider').toggleClass('close');
+  $('.collapse').text("view/collapse");
 });
 
 }
@@ -271,7 +272,7 @@ sk.smoothScroll = function () {
 sk.buttonScroll = function () {
     $('.submitButton').on('click', function() {
     $('html, body').animate({
-        scrollTop: $('.location').offset().top
+        scrollTop: $('.smoothscrollSpacer').offset().top
     }, 1000);
   });
 }

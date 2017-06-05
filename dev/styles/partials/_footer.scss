@@ -1,0 +1,102 @@
+footer {
+	clear: both;
+	background-color: black;
+	width: 100%;
+	.footerWrapper{
+	background-image: url(../../../images/concertHero2.jpg);
+	background-size: cover;
+	max-width: 890px;
+	margin: 0 auto;
+		.twitter, .creators{
+			background-color: rgba(183,183,183,0.8);
+			float: left;
+			text-align: center;
+			width: 50%;
+			border: 2px solid black;
+			.svg {
+					max-width: 10%;
+					float: left;
+					margin: 3% 0 0 0;
+				}
+				p.social {
+					width: 20%;
+					float: left;
+					margin: 7% 0;
+					display: inline-block;
+				}
+				iframe {
+					width: calc(20% - 20px);
+					margin: 10px;
+					float: left;
+					margin-top: 7%;
+			.barcodeFooter {
+					width: 20%;
+					float: right;
+					margin: 0;
+					img {
+						width: 100%;
+
+					}
+				}
+				.creatorText {
+					width: 70%;
+					p {
+						width: 100%;
+						margin: 0;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+.creatorText {
+	float: left;
+}
+.barcodeFooter {
+	max-width: 50px;
+}
+
+@media (max-width: 768px) {
+	footer {
+		.footerWrapper{
+			.twitter, .creators{
+				width: 100%;
+				.svg {
+					width: 10%;
+					float: left;
+					margin: 3% 0 0 0;
+				}
+				p {
+					width: 40%;
+					float: left;
+					margin: 7% 0;
+				}
+				iframe {
+					width: calc(20% - 20px);
+					margin: 10px;
+					float: left;
+					margin-top: 7%;
+				}
+				.barcodeFooter {
+					width: 20%;
+					float: right;
+					margin: 0;
+					img {
+						width: 100%;
+
+					}
+				}
+				.creatorText {
+					width: 70%;
+					p {
+						width: 100%;
+						margin: 0;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+}
