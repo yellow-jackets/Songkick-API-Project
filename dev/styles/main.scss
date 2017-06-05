@@ -108,6 +108,29 @@ input[type="submit"]{
 //     left:-999px;
 //     padding:8px;
 // }
+footer {
+	clear: both;
+	background-color: $lightGrey;
+	.footerWrapper{
+	max-width: 800px;
+	margin: 0 auto;
+		.twitter, .creators{
+			float: left;
+			text-align: center;
+			width: 50%;
+			background-color: #fff;
+			border: 2px solid black;
+		}
+	}
+}
+.creatorText {
+	float: left;
+}
+
+.svg {
+	max-width:80px;
+	float: left;
+}
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
