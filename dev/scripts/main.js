@@ -116,20 +116,6 @@ sk.addArtistNameToObject = function (concertList) {
 };
 
 
-
-// http://api.songkick.com/api/3.0/search/locations.json?query={search_query}&apikey={your_api_key}
-
-//get location id and make second songkickajax request for concerts
-//get artist names from second songkickajax store in variable and use to query musiki for images
-//funnel second ajaxsongkick and musiki results into handlebar template
-//display that in our masonry div
-
-//figure out how to make it clickable into firebase (storage)
-//figure out hot update userConcertListItems with firebase->handlebar template for the userConcertListItems
-
-// get artist images
-
-// figure out how to append this
 sk.getArtistsImages = function (concertList) {
   var artistImages = [];
 
