@@ -1,0 +1,488 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+main {
+  background-image: url(../../images/concertHero2.jpg);
+  background-position: center;
+  height: 100vh; }
+
+.logo {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center; }
+
+.landingPageTicket {
+  background-color: rgba(183, 183, 183, 0.8);
+  border: 4px solid #000000;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 250px; }
+
+.instructions {
+  text-align: left;
+  width: 70%;
+  float: left;
+  margin-bottom: 30px; }
+
+.barcodeDiv {
+  float: right;
+  width: 30%; }
+
+.barcode {
+  max-height: 200px;
+  float: right; }
+
+form {
+  margin-top: 30px; }
+
+.usersLocation {
+  padding: 12px;
+  margin-right: 10px; }
+
+input[type="text"] {
+  border: none; }
+
+input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 30px; }
+
+.submitButton:hover {
+  color: #F6D70E; }
+
+.smoothscrollSpacer {
+  min-height: 60px;
+  float: left; }
+
+h3, h4 {
+  margin: 5px; }
+
+.smoothscrollSpacer {
+  min-height: 60px;
+  float: left; }
+
+.cityHeading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 50px; }
+
+.listInstructions {
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 40px; }
+
+ul {
+  list-style-type: none;
+  padding: 0; }
+
+.concerts {
+  width: 100%;
+  float: left;
+  background-color: #B7B7B7; }
+
+#concerts {
+  max-width: 980px;
+  margin: 0 auto;
+  margin: 10px auto;
+  background-color: #B7B7B7; }
+  #concerts h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 21px; }
+
+.concertListItem ul {
+  margin: 5px;
+  background-color: #B7B7B7;
+  min-height: 460px;
+  position: relative; }
+
+.concertListItem ul li button {
+  position: absolute;
+  bottom: 15px;
+  width: 70%;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #F6D70E;
+  font-family: 'Oswald', sans-serif;
+  border: 2px solid white; }
+
+.concertListItem ul li button:hover {
+  border: 2px solid #000000; }
+
+#concertListItems {
+  margin-top: 2px; }
+
+.concertListItem {
+  float: left;
+  width: calc(25% - (60px / 4));
+  margin: 10px 20px 10px 0px;
+  text-align: center;
+  border: 2px solid #B7B7B7; }
+  .concertListItem h3 {
+    font-family: 'Oswald', sans-serif; }
+  .concertListItem h4 {
+    font-size: 16px; }
+  .concertListItem .bandImage {
+    filter: grayscale(100%);
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    margin-bottom: 15px; }
+  .concertListItem .songkickLogo {
+    max-width: 80px;
+    margin: 9px auto;
+    display: block; }
+
+.concertListItem:hover {
+  box-shadow: 12px 15px 15px 0px rgba(183, 183, 183, 0.35);
+  transform: translateY(-5px);
+  border: 2px solid #000000; }
+
+.concertListItem:nth-of-type(4n) {
+  margin-right: 0; }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .concerts {
+    width: 100%; }
+  #concerts {
+    width: 80%;
+    margin: auto; }
+  #concertListItem {
+    width: calc(100% - 20px);
+    margin: 10; }
+  .logo {
+    margin: 0 20px;
+    text-align: center;
+    width: calc(100% - 40px); }
+    .logo img {
+      width: 100%; } }
+
+.userListSection {
+  max-width: 800px;
+  margin: 10px auto; }
+  .userListSection h2 {
+    text-align: center; }
+
+#userListConcertItems {
+  min-height: 300px; }
+
+#userListConcertItems li ul {
+  width: 100%;
+  background-color: #B7B7B7;
+  margin-bottom: 25px;
+  float: left; }
+
+#userListConcertItems li ul li {
+  display: inline-block; }
+
+#userListConcertItems li ul li {
+  width: 100%;
+  text-align: left;
+  background-color: #B7B7B7; }
+  #userListConcertItems li ul li h3 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    background-color: #F6D70E;
+    color: #000000;
+    margin: 0px;
+    padding: 10px;
+    border-bottom: 4px solid black;
+    clear: both; }
+  #userListConcertItems li ul li ul {
+    float: left; }
+  #userListConcertItems li ul li h4 {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 15px;
+    color: #000000; }
+  #userListConcertItems li ul li .bandImage {
+    filter: grayscale(100%);
+    width: 40%;
+    object-fit: cover;
+    height: 300px;
+    float: left;
+    margin-right: 5%;
+    vertical-align: text-bottom; }
+  #userListConcertItems li ul li .songkickLogo {
+    max-width: 80px;
+    margin: auto;
+    vertical-align: middle; }
+
+#userListConcertItems ul li button {
+  display: none; }
+
+.trayTitle {
+  text-align: center;
+  margin: 0;
+  border-top: 4px solid #F6D70E;
+  border-bottom: 4px solid #F6D70E;
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.slider {
+  position: fixed;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #FFF;
+  transition: all 1s; }
+
+.slider.close {
+  height: 75px; }
+
+.closedTray {
+  overflow: hidden; }
+
+footer {
+  height: 200px;
+  background-color: #B7B7B7; }
+  footer .footerWrapper {
+    max-width: 800px;
+    margin: 0 auto; }
+    footer .footerWrapper .barcodeFooter {
+      transform: rotate(90deg);
+      width: 50px; }
+    footer .footerWrapper .twitter {
+      width: 30%;
+      float: left;
+      margin-top: 50px;
+      border-left: 4px solid #000000; }
+    footer .footerWrapper .creators {
+      float: left;
+      text-align: left;
+      width: calc(70% - 10px);
+      margin-top: 50px;
+      border-left: 4px solid #000000;
+      height: 100px; }
+  footer .creatorText {
+    text-align: left; }
+  footer .svg {
+    max-width: 80px;
+    float: left;
+    margin: 0 10px; }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .concertListItem {
+    float: left;
+    width: calc(50% - (20px / 2));
+    margin: 10px 20px 10px 0px; }
+  .concertListItem:nth-of-type(2n) {
+    margin-right: 0; }
+  .landingPageTicket {
+    height: 320px; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .concertListItem {
+    width: 100%;
+    margin: 10px 10px 10px 10px; }
+  .logo {
+    margin: 0 20px;
+    text-align: center;
+    width: calc(100% - 40px); }
+  img {
+    width: 100%; }
+  .landingPageTicket {
+    height: 360px; }
+  footer {
+    height: 400px; }
+  footer .footerWrapper .creators {
+    width: 100%;
+    border: none; }
+  footer .footerWrapper .twitter {
+    width: 100%;
+    border: none; }
+  #userListConcertItems ul li ul li .bandImage {
+    width: 100%;
+    height: inherit; } }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  min-height: 100%; }
+
+span {
+  color: #F6D70E;
+  text-transform: uppercase; }
+
+p {
+  color: #000000; }
+
+input[type="text"] {
+  border: none; }
+
+input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 30px; }
+
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .concertListItem {
+    float: left;
+    width: calc(50% - (20px / 2));
+    margin: 10px 20px 10px 0px; }
+  .concertListItem:nth-of-type(2n) {
+    margin-right: 0; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .concertListItem {
+    width: 100%;
+    margin: 10px 10px 10px 10px; }
+  .logo {
+    margin: 0 20px;
+    text-align: center;
+    width: calc(100% - 40px); }
+  img {
+    width: 100%; } }
