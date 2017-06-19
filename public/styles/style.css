@@ -185,8 +185,16 @@ input[type="submit"] {
 .submitButton:hover {
   color: #F6D70E; }
 
+.smoothscrollSpacer {
+  min-height: 60px;
+  float: left; }
+
 h3, h4 {
   margin: 5px; }
+
+.smoothscrollSpacer {
+  min-height: 60px;
+  float: left; }
 
 .cityHeading {
   font-family: 'Oswald', sans-serif;
@@ -203,11 +211,20 @@ ul {
   list-style-type: none;
   padding: 0; }
 
+.concerts {
+  width: 100%;
+  float: left;
+  background-color: #B7B7B7; }
+
 #concerts {
   max-width: 980px;
-  margin: 10px auto; }
+  margin: 0 auto;
+  margin: 10px auto;
+  background-color: #B7B7B7; }
   #concerts h2 {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 21px; }
 
 .concertListItem ul {
   margin: 5px;
@@ -227,6 +244,9 @@ ul {
 
 .concertListItem ul li button:hover {
   border: 2px solid #000000; }
+
+#concertListItems {
+  margin-top: 2px; }
 
 .concertListItem {
   float: left;
@@ -258,6 +278,23 @@ ul {
 .concertListItem:nth-of-type(4n) {
   margin-right: 0; }
 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .concerts {
+    width: 100%; }
+  #concerts {
+    width: 80%;
+    margin: auto; }
+  #concertListItem {
+    width: calc(100% - 20px);
+    margin: 10; }
+  .logo {
+    margin: 0 20px;
+    text-align: center;
+    width: calc(100% - 40px); }
+    .logo img {
+      width: 100%; } }
+
 .userListSection {
   max-width: 800px;
   margin: 10px auto; }
@@ -271,6 +308,9 @@ ul {
   width: 100%;
   background-color: #B7B7B7;
   margin-bottom: 25px;
+  float: left; }
+
+#userListConcertItems li ul li {
   display: inline-block; }
 
 #userListConcertItems li ul li {
@@ -291,6 +331,7 @@ ul {
     float: left; }
   #userListConcertItems li ul li h4 {
     font-size: 20px;
+    color: #000000;
     margin-top: 15px;
     color: #000000; }
   #userListConcertItems li ul li .bandImage {
@@ -333,6 +374,9 @@ ul {
 
 .slider.close {
   height: 75px; }
+
+.closedTray {
+  overflow: hidden; }
 
 footer {
   height: 200px;
@@ -409,3 +453,36 @@ span {
 
 p {
   color: #000000; }
+
+input[type="text"] {
+  border: none; }
+
+input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 30px; }
+
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .concertListItem {
+    float: left;
+    width: calc(50% - (20px / 2));
+    margin: 10px 20px 10px 0px; }
+  .concertListItem:nth-of-type(2n) {
+    margin-right: 0; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .concertListItem {
+    width: 100%;
+    margin: 10px 10px 10px 10px; }
+  .logo {
+    margin: 0 20px;
+    text-align: center;
+    width: calc(100% - 40px); }
+  img {
+    width: 100%; } }

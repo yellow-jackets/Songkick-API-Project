@@ -166,9 +166,11 @@ sk.sendObjectToHandlebarTemplate = function (concertList) {
 sk.smoothScroll = function () {
   $('.trigger, .slider').click(function () {
     $('.slider').toggleClass('close');
-    $('html, body').animate({
-      scrollTop: $('.trayTitle').offset().top
-    }, 0);
+    $('.slider').toggleClass('closedTray');
+    $('.slider').scrollTop(0);
+    //   $('html, body').animate({
+    //         scrollTop: $('.trayTitle').offset().top
+    //     }, 0);
 
     $('.collapse').text("view/collapse");
   });
