@@ -21,7 +21,6 @@
 #userListConcertItems li ul li {
 	display: inline-block;
 }
-}
 
 #userListConcertItems li ul li {
 	width: 100%;
@@ -96,5 +95,9 @@
 .slider.close {
   // top: 100vh;
   height: 75px;
+}
+
+.closedTray {
+    overflow: hidden;
 }
 
