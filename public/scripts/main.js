@@ -60,7 +60,7 @@ sk.locationEvent = function () {
 // cities that match query
 sk.getMatchingCities = function (userCity) {
   $.ajax({
-    url: 'http://api.songkick.com/api/3.0/search/locations.json',
+    url: 'https://api.songkick.com/api/3.0/search/locations.json',
     method: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsoncallback',
@@ -77,7 +77,7 @@ sk.getMatchingCities = function (userCity) {
 
 sk.getCityShows = function (id) {
   $.ajax({
-    url: "http://api.songkick.com/api/3.0/metro_areas/" + id + "/calendar.json",
+    url: "https://api.songkick.com/api/3.0/metro_areas/" + id + "/calendar.json",
     method: 'GET',
     dataType: 'jsonp',
     jsonp: 'jsoncallback',
